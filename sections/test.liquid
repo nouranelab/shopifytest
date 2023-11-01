@@ -1,12 +1,21 @@
 <style>
     .color{
         color:  {{ section.settings.title_color}};
-    }
+    } 
+   .asba { 
+
+    max-width: {{ section.settings.width}}px;
+    
+   }
+   /* . */
 </style>
 
 <section id="{{section.id}}">
     <div class="color">hello{{ section.settings.title}} </div>
+
+    <img src="{{section.settings.image | image_url }}" alt="" class="asba" >
 </section>
+
 
 {% schema %}
 {
@@ -25,6 +34,21 @@
             "label": "label color",
             "default": "#000000",
             "info": "black"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "label23"
+        },
+        {
+            "type": "range",
+            "id": "width",
+            "label": "label",
+            "unit": "px",
+            "min": 0,
+            "max": 200,
+            "step": 10,
+            "default": 50
         }
     ],
     "presets": [
