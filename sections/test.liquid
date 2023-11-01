@@ -1,0 +1,38 @@
+<style>
+    .color{
+        color:  {{ section.settings.title_color}};
+    }
+</style>
+
+<section id="{{section.id}}">
+    <div class="color">hello{{ section.settings.title}} </div>
+</section>
+
+{% schema %}
+{
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "test",
+            "default": "asba",
+            "info": "yfz",
+            "placeholder": "sorm"
+        },
+        {
+            "type": "color",
+            "id": "title_color",
+            "label": "label color",
+            "default": "#000000",
+            "info": "black"
+        }
+    ],
+    "presets": [
+        {
+            "category": "test",
+            "name":"test"
+        }
+    ]
+
+}
+{% endschema %}
